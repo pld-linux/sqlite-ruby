@@ -2,7 +2,7 @@
 %define	ruby_rubylibdir		%(ruby -r rbconfig -e 'print Config::CONFIG["rubylibdir"]')
 %define tarname sqlite-ruby
 Summary:	SQLite module for Ruby
-Summary(pl):	Modu³ SQLite dla Ruby
+Summary(pl):	Modu³ SQLite dla jêzyka Ruby
 Name:		sqlite-ruby
 Version:	2.2.1
 Release:	1
@@ -14,15 +14,15 @@ Source1:	setup.rb
 URL:		http://sqlite-ruby.rubyforge.org
 BuildRequires:	ruby
 BuildRequires:	sqlite-devel
-Obsoletes:	ruby-sqlite
 Requires:	ruby
+Obsoletes:	ruby-sqlite
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 SQLite module for Ruby.
 
 %description -l pl
-Modu³ SQLite dla Ruby.
+Modu³ SQLite dla jêzyka Ruby.
 
 %prep
 %setup -q
