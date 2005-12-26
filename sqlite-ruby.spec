@@ -1,5 +1,3 @@
-%define	ruby_sitearchdir	%(ruby -r rbconfig -e 'print Config::CONFIG["archdir"]')
-%define	ruby_rubylibdir		%(ruby -r rbconfig -e 'print Config::CONFIG["rubylibdir"]')
 %define tarname sqlite-ruby
 Summary:	SQLite module for Ruby
 Summary(pl):	Modu³ SQLite dla jêzyka Ruby
@@ -14,6 +12,7 @@ Source1:	setup.rb
 URL:		http://sqlite-ruby.rubyforge.org
 BuildRequires:	ruby
 BuildRequires:	sqlite-devel
+buildrequires:	rpmbuild(macros) >= 1.272
 Requires:	ruby
 Obsoletes:	ruby-sqlite
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -26,10 +25,10 @@ Modu³ SQLite dla jêzyka Ruby.
 
 %prep
 %setup -q
-
-%build
 install %{SOURCE1} .
 echo sqlite-api.c > ext/MANIFEST
+
+%build
 ruby setup.rb config \
 	--rb-dir=%{ruby_rubylibdir} \
 	--so-dir=%{ruby_sitearchdir}
@@ -37,7 +36,7 @@ ruby setup.rb setup
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{ruby_sitearchdir},%{ruby_rubyarchdir}}
+install -d $RPM_BUILD_ROOT%{ruby_sitearchdir}
 
 ruby setup.rb install --prefix=$RPM_BUILD_ROOT
 
