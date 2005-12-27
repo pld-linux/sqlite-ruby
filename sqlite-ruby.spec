@@ -3,17 +3,17 @@ Summary:	SQLite module for Ruby
 Summary(pl):	Modu³ SQLite dla jêzyka Ruby
 Name:		sqlite-ruby
 Version:	2.2.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages
 Source0:	http://rubyforge.org/frs/download.php/1825/%{name}-%{version}.tar.bz2
 # Source0-md5:	935caede77d829cc6ec3e73d8844edf2
 Source1:	setup.rb
 URL:		http://sqlite-ruby.rubyforge.org
-BuildRequires:	ruby
+BuildRequires:	ruby-modules
 BuildRequires:	sqlite-devel
 buildrequires:	rpmbuild(macros) >= 1.272
-Requires:	ruby
+Requires:	ruby-modules
 Obsoletes:	ruby-sqlite
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
