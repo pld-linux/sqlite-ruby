@@ -10,10 +10,10 @@ Source0:	http://rubyforge.org/frs/download.php/1825/%{name}-%{version}.tar.bz2
 # Source0-md5:	935caede77d829cc6ec3e73d8844edf2
 Source1:	setup.rb
 URL:		http://sqlite-ruby.rubyforge.org
-BuildRequires:	ruby-modules
+BuildRequires:	rpmbuild(macros) >= 1.277
+BuildRequires:	ruby-devel
 BuildRequires:	sqlite-devel
-buildrequires:	rpmbuild(macros) >= 1.272
-Requires:	ruby-modules
+%ruby_mod_ver_requires_eq
 Obsoletes:	ruby-sqlite
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
