@@ -13,7 +13,7 @@ URL:		http://sqlite-ruby.rubyforge.org
 BuildRequires:	rpmbuild(macros) >= 1.277
 BuildRequires:	ruby-devel
 BuildRequires:	sqlite-devel
-%ruby_mod_ver_requires_eq
+%{?ruby_mod_ver_requires_eq}
 Obsoletes:	ruby-sqlite
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
