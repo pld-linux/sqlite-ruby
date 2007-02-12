@@ -1,6 +1,6 @@
 %define tarname sqlite-ruby
 Summary:	SQLite module for Ruby
-Summary(pl.UTF-8):   Moduł SQLite dla języka Ruby
+Summary(pl.UTF-8):	Moduł SQLite dla języka Ruby
 Name:		sqlite-ruby
 Version:	2.2.1
 Release:	3
